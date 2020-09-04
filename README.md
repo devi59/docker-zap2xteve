@@ -14,7 +14,7 @@ docker create \
   -v <path to data>:/data \
   -v <path to cache>:/cache \
   --restart unless-stopped \
-  burmjeff/zap2xteve
+  devi59/docker-zap2xteve
 ```
 
 ## Parameters
