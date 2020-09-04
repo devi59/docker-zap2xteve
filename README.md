@@ -76,7 +76,6 @@ docker create \
   -a = output all channels (not just favorites) 
   -j = add "series" category to all non-movie programs
   
-### OTHER NOTES
 ```
 
 Notes: This repo is derived from the work of [shuaiscott] (https://github.com/shuaiscott/zap2xml) and [crlorentzen] (https://github.com/crlorentzen/docker-zap2xml) and [sjsaleem] (https://github.com/sjsaleem/zap2xml)
