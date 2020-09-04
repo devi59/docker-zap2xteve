@@ -93,3 +93,5 @@ For example:
 | `-e ZAP2XML_USERNAME_3=` | Specify username 3 for either Zap2it or TVGuide |
 | `-e ZAP2XML_PASSWORD_3=` | Specify password 3 for either Zap2it or TVGuide |
 | `-e ZAP2XML_ARGS_3= -D -I -F -L` | (OPTIONAL) Specify additional arguments for zap2xml |
+
+Notes: This repo is derived from the work of [shuaiscott] (https://github.com/shuaiscott/zap2xml) and [crlorentzen] (https://github.com/crlorentzen/docker-zap2xml) and [sjsaleem] (https://github.com/sjsaleem/zap2xml)
