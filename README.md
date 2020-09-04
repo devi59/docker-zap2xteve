@@ -28,12 +28,52 @@ docker create \
 | `-e TVGUIDE_EPG=FALSE` | Specify whether to use TVGuide instead of Zap2it |
 | `-e ZAP2XML_USERNAME=` | Specify username for either Zap2it or TVGuide |
 | `-e ZAP2XML_PASSWORD=` | Specify password for either Zap2it or TVGuide |
-| `-e ZAP2XML_ARGS= -D -I -F -L -T -O -b` | Specify additional arguments for zap2xml (http://zap2xml.awardspace.info) |
+| `-e ZAP2XML_ARGS= -D -I -F -L -T -O -b` | Specify additional arguments for zap2xml |
 | `-e XMLTV_FILENAME=xmltv.xml` | Specify filename for zap2xml EPG-XML file |
 | `-e XML_UPDATE_INTERVAL=24` | Specify update interval for zap2xml (in hours). |
 | `-v /config` | Location of xTeVe config files |
 | `-v /data` | Location of zap2xml EPG-XML file |
 | `-v /cache` | Location of zap2xml cache |
+
+OPTIONAL ARGUMENTS
+
+  -u <username>
+  -p <password>
+  -d <# of days> (default = $days)
+  -n <# of no-cache days> (from end)   (default = $ncdays)
+  -N <# of no-cache days> (from start) (default = $ncsdays)
+  -B <no-cache day>
+  -s <start day offset> (default = $start)
+  -o <output xml filename> (default = "$outFile")
+  -c <cacheDirectory> (default = "$cacheDir")
+  -l <lang> (default = "$lang")
+  -i <iconDirectory> (default = don't download channel icons)
+  -m <#> = offset program times by # minutes (better to use TZ env var)
+  -b = retain website channel order
+  -x = output XTVD xml file format (default = XMLTV)
+  -w = wait on exit (require keypress before exiting)
+  -q = quiet (no status output)
+  -r <# of connection retries before failure> (default = $retries, max 20)
+  -e = hex encode entities (html special characters like accents)
+  -E "amp apos quot lt gt" = selectively encode standard XML entities
+  -F = output channel names first (rather than "number name")
+  -O = use old tv_grab_na style channel ids (C###nnnn.zap2it.com)
+  -A "new live" = append " *" to program titles that are "new" and/or "live"
+  -M = copy movie_year to empty movie sub-title tags
+  -U = UTF-8 encoding (default = "ISO-8859-1")
+  -L = output "<live />" tag (not part of xmltv.dtd)
+  -T = don't cache files containing programs with "$sTBA" titles 
+  -P <http://proxyhost:port> = to use an http proxy
+  -C <configuration file> (default = "$confFile")
+  -S <#seconds> = sleep between requests to prevent flooding of server 
+  -D = include details = 1 extra http request per program!
+  -I = include icons (image URLs) - 1 extra http request per program!
+  -J <xmltv> = include xmltv file in output
+  -Y <lineupId> (if not using username/password)
+  -Z <zipcode> (if not using username/password)
+  -z = use tvguide.com instead of zap2it.com
+  -a = output all channels (not just favorites) 
+  -j = add "series" category to all non-movie programs
 
 ## Using Multiple zap2xml users/guides
 ```
@@ -45,10 +85,10 @@ For example:
 | :----: | --- |
 | `-e ZAP2XML_USERNAME_1=` | Specify username 1 for either Zap2it or TVGuide |
 | `-e ZAP2XML_PASSWORD_1=` | Specify password 1 for either Zap2it or TVGuide |
-| `-e ZAP2XML_ARGS_1= -D` | (OPTIONAL) Specify additional arguments for zap2xml (http://zap2xml.awardspace.info) |
+| `-e ZAP2XML_ARGS_1= -D` | (OPTIONAL) Specify additional arguments for zap2xml |
 | `-e ZAP2XML_USERNAME_2=` | Specify username 2 for either Zap2it or TVGuide |
 | `-e ZAP2XML_PASSWORD_2=` | Specify password 2 for either Zap2it or TVGuide |
-| `-e ZAP2XML_ARGS_2= -z` | (OPTIONAL) Specify additional arguments for zap2xml (http://zap2xml.awardspace.info) |
+| `-e ZAP2XML_ARGS_2= -z` | (OPTIONAL) Specify additional arguments for zap2xml |
 | `-e ZAP2XML_USERNAME_3=` | Specify username 3 for either Zap2it or TVGuide |
 | `-e ZAP2XML_PASSWORD_3=` | Specify password 3 for either Zap2it or TVGuide |
-| `-e ZAP2XML_ARGS_3= -D -I -F -L` | (OPTIONAL) Specify additional arguments for zap2xml (http://zap2xml.awardspace.info) |
+| `-e ZAP2XML_ARGS_3= -D -I -F -L` | (OPTIONAL) Specify additional arguments for zap2xml |
