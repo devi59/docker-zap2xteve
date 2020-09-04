@@ -75,7 +75,11 @@ docker create \
   -z = use tvguide.com instead of zap2it.com
   -a = output all channels (not just favorites) 
   -j = add "series" category to all non-movie programs
+  
+### OTHER NOTES
+```
 
+Notes: This repo is derived from the work of [shuaiscott] (https://github.com/shuaiscott/zap2xml) and [crlorentzen] (https://github.com/crlorentzen/docker-zap2xml) and [sjsaleem] (https://github.com/sjsaleem/zap2xml)
 ## Using Multiple zap2xml users/guides
 ```
 Add as many zap2xml user details as wanted (users must be sequentially numbered). 
@@ -94,7 +98,4 @@ For example:
 | `-e ZAP2XML_PASSWORD_3=` | Specify password 3 for either Zap2it or TVGuide |
 | `-e ZAP2XML_ARGS_3= -D -I -F -L` | (OPTIONAL) Specify additional arguments for zap2xml |
 
-### NOTES
-'''
 
-Notes: This repo is derived from the work of [shuaiscott] (https://github.com/shuaiscott/zap2xml) and [crlorentzen] (https://github.com/crlorentzen/docker-zap2xml) and [sjsaleem] (https://github.com/sjsaleem/zap2xml)
