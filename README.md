@@ -35,7 +35,8 @@ docker create \
 | `-v /data` | Location of zap2xml EPG-XML file |
 | `-v /cache` | Location of zap2xml cache |
 
-OPTIONAL ARGUMENTS
+### OPTIONAL ARGUMENTS
+```
 
   -u <username>
   -p <password>
